@@ -29,12 +29,12 @@ def show_post(page=None):
 @app.route('/submit_form', methods=['POST', "GET"])
 def login():
     if (request.method == 'POST'):
-        try:
-            form_data = request.form.to_dict()
-           # write_to_database(form_data)
-            write_to_database(form_data)
-            return redirect('/')
-        except:
-            return 'dit not save to database'
+        # try:
+        form_data = request.form.to_dict()
+       # write_to_database(form_data)
+        write_to_database(form_data)
+        return redirect('/')
+        # except:
+        # return 'dit not save to database'
 
     return 'Something went wrong'
